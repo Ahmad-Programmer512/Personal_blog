@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Blogs</title>
+</head>
+<body>
+    
+    <h1>Public Blogs</h1>
+
+    {% if articles %}
+        {% for article in articles %}
+            <hr><br>
+            <a href="/blogs/{{ article.id }}">article.title</a>
+            <h3 style="color: gray;">Published_at: {{ article.published_at }}</h3>
+        {% endfor %}
+    {% endif %}
+        
+    
+</body>
+</html>

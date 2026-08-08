@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Personal Blog</h1>
+
+    <a href="/new_blog">
+        <button>+ Add</button>
+    </a>
+
+    {% if articles %}
+
+        {% for article in articles %}
+
+            <hr>
+
+            <h2>{{ article.title }}</h2>
+
+            <p>{{ article.content }}</p>
+
+            <p>
+                Published: {{ article.published_at }}
+            </p>
+
+            <a href="/update/{{ article.id }}">
+                Update
+            </a>
+            <br>
+
+            <a href="/delete/{{ article.id }}">
+                Delete
+            </a>
+
+        {% endfor %}
+
+    {% else %}
+
+        <p>No blogs found.</p>
+
+    {% endif %}
+
+</body>
+</html>
